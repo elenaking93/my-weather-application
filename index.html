@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather forecast</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script
+      src="https://kit.fontawesome.com/aa99dd6255.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navwrapper">
+        <div class="city-date">
+          <h1 class="main-city">KIEV</h1>
+          <h2 class="current-datetime"></h2>
+        </div>
+        <div class="search">
+          <form class="search-city">
+            <input type="text" placeholder="Search city" id="search-city" />
+            <input class="search-button" type="submit" value="Let's go!" />
+          </form>
+          <button class="current-location-button">
+            Current location
+            <i class="fa-solid fa-location-dot"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <div class="card main-block">
+            <div class="card-body">
+              <div class="row today-weather">
+                <div class="col-4">
+                  <div class="today">Today</div>
+                  <div class="today-temperature">
+                    <span id="current-temperature">17</span>
+                    <a href="" id="celcium-temp">°C</a> |
+                    <a href="" id="farenheit-temp">°F</a>
+                  </div>
+                </div>
+                <div class="col-4 today-image">
+                  <i class="fa-solid fa-sun"></i>
+                </div>
+                <div class="col-4">
+                  <div class="sky-state">Sunny</div>
+                  <div class="humidity">Humidity 65%</div>
+                  <div class="wind">Wind 3 m/s</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="future-forecast"><p>5-day forecast</p></div>
+      <div class="row future-weather">
+        <div class="col-12 col-md day day1">
+          <div class="card day-section">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8">
+                  <div class="weekday">Thursday</div>
+                  <div class="cloudness">Sunny</div>
+                  <div class="temperature-days5">18°C</div>
+                </div>
+                <div class="col-4 day5-image">
+                  <i class="fa-solid fa-sun"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md day day2">
+          <div class="card day-section">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8">
+                  <div class="weekday">Friday</div>
+                  <div class="cloudness">Cloudy</div>
+                  <div class="temperature-days5">19°C</div>
+                </div>
+                <div class="col-4 day5-image">
+                  <i class="fa-solid fa-cloud"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md day day3">
+          <div class="card day-section">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8">
+                  <div class="weekday">Saturday</div>
+                  <div class="cloudness">Partly cloudy</div>
+                  <div class="temperature-days5">19°C</div>
+                </div>
+                <div class="col-4 day5-image">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md day day4">
+          <div class="card day-section">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8">
+                  <div class="weekday">Sunday</div>
+                  <div class="cloudness">Rainy</div>
+                  <div class="temperature-days5">17°C</div>
+                </div>
+                <div class="col-4 day5-image">
+                  <i class="fa-solid fa-cloud-showers-heavy"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md day day5">
+          <div class="card day-section">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-8">
+                  <div class="weekday">Monday</div>
+                  <div class="cloudness">Cloudy</div>
+                  <div class="temperature-days5">18°C</div>
+                </div>
+                <div class="col-4 day5-image">
+                  <i class="fa-solid fa-cloud"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="creator"><p>Created by Elena Korol</p></div>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>
