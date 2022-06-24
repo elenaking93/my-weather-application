@@ -37,6 +37,14 @@ function displayHours() {
 }
 currentDate.innerHTML = `${day} ${date} ${month} ${year}, ${displayHours()}:${displayMinutes()}`;
 
+function searchDefaultCity(city) {
+  let apiKey = "28d1bc668482ed61803072514627074f";
+  let units = "metric";
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+  axios.get(url).then(showWeather);
+}
+
 function changeCurrentCityAndWeather(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#search-city");
@@ -99,3 +107,4 @@ function getGeolocation() {
 
 let locationButton = document.querySelector(".current-location-button");
 locationButton.addEventListener("click", getGeolocation);
+searchDefaultCity("Kyiv");
