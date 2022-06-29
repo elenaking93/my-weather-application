@@ -86,6 +86,12 @@ function showWeather(response) {
   let wind = response.data.wind.speed;
   let windSpeed = document.querySelector(".wind");
   windSpeed.innerHTML = `Wind ${wind} m/s`;
+  let iconElement = document.querySelector("#today-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   console.log(response);
   let city = response.data.name;
   let searchCity = document.querySelector(".main-city");
