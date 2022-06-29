@@ -3,11 +3,11 @@ body {
 }
 .container {
   border: 1px solid rgb(144, 133, 133);
-  border-color: #3f72af;
+  border-color: #ff7e67;
   margin: 20px 15px 20px 15px;
   padding: 15px;
   border-radius: 10px;
-  background-color: #dbe2ef;
+  background-color: #fafafa;
   box-shadow: 0 5px 10px 0 rgb(0 0 0 / 16%), 0 0 0 1px rgb(0 0 0 / 8%);
 }
 .navwrapper {
@@ -24,24 +24,23 @@ body {
 }
 .search-city {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  border-color: #3f72af;
+  border-color: #ff7e67;
   display: inline-block;
 }
 .search-button {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  background: transparent;
+  background: rgba(255, 126, 103, 0.7);
 }
 .current-location-button {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  background: transparent;
+  background: rgba(255, 126, 103, 0.7);
 }
 .future-forecast {
   text-align: center;
   margin: 10px 0px;
   font-size: 20px;
   font-weight: bold;
-  opacity: 80%;
-  color: #112d4e;
+  color: #ff7e67;
 }
 .creator {
   text-align: center;
@@ -75,20 +74,18 @@ body {
 }
 .main-block {
   margin: 10px 0;
-  background-color: #f9f7f7;
-  border-color: #3f72af;
+  background-color: rgba(162, 213, 242, 0.8);
+  border-color: #ff7e67;
   transition: all 200ms ease;
 }
 .main-block:hover {
-  background-color: rgba(63, 114, 175, 0.6);
-  color: #fff;
+  background-color: rgba(255, 126, 103, 0.3);
 }
 .main-city {
   font-size: 40px;
   font-weight: bold;
   margin-top: 10px;
-  opacity: 80%;
-  color: #112d4e;
+  color: #ff7e67;
 }
 .current-datetime {
   font-size: 25px;
@@ -99,8 +96,7 @@ body {
   font-size: 18px;
   margin-top: -10px;
   font-weight: bold;
-  opacity: 80%;
-  color: #112d4e;
+  color: #ff7e67;
 }
 .today-temperature {
   font-size: 40px;
@@ -118,8 +114,7 @@ body {
 }
 .weekday {
   font-weight: bold;
-  opacity: 80%;
-  color: #112d4e;
+  color: #ff7e67;
 }
 
 .today-image {
@@ -137,18 +132,15 @@ body {
   font-size: 16px;
   margin-top: 20px;
   font-style: italic;
-  opacity: 90%;
-  color: #112d4e;
+  color: #ff7e67;
 }
 .day-section {
-  background-color: #f9f7f7;
-  border-color: #3f72af;
+  background-color: rgba(162, 213, 242, 0.8);
+  border-color: #ff7e67;
   transition: all 200ms ease;
 }
 .day-section:hover {
-  background-color: rgba(63, 114, 175, 0.6);
-
-  color: #fff;
+  background-color: rgba(255, 126, 103, 0.3);
 }
 #celcium-temp {
   text-decoration: none;
