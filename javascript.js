@@ -59,24 +59,10 @@ function changeCurrentCityAndWeather(event) {
 let searchForm = document.querySelector(".search-city");
 searchForm.addEventListener("submit", changeCurrentCityAndWeather);
 
-// function changeToCelcium(event) {
-//   event.preventDefault();
-//   todayTemperature.innerHTML = 17;
-// }
-// function changeToFarenheit(event) {
-//   event.preventDefault();
-//   todayTemperature.innerHTML = 63;
-// }
-// let todayTemperature = document.querySelector("#current-temperature");
-// let celciumTemp = document.querySelector("#celcium-temp");
-// let farenheitTemp = document.querySelector("#farenheit-temp");
-// celciumTemp.addEventListener("click", changeToCelcium);
-// farenheitTemp.addEventListener("click", changeToFarenheit);
-
 function showWeather(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let displayTemp = document.querySelector("#current-temperature");
-  displayTemp.innerHTML = temperature;
+  displayTemp.innerHTML = celsiusTemperature;
   let description = response.data.weather[0].main;
   let skyState = document.querySelector(".sky-state");
   skyState.innerHTML = description;
@@ -113,4 +99,25 @@ function getGeolocation() {
 
 let locationButton = document.querySelector(".current-location-button");
 locationButton.addEventListener("click", getGeolocation);
+
+function changeToCelcium(event) {
+  event.preventDefault();
+  todayTemperature.innerHTML = celsiusTemperature;
+  celciumTemp.classList.add("active");
+  farenheitTemp.classList.remove("active");
+}
+function changeToFarenheit(event) {
+  event.preventDefault();
+  todayTemperature.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+  celciumTemp.classList.remove("active");
+  farenheitTemp.classList.add("active");
+}
+let todayTemperature = document.querySelector("#current-temperature");
+let celciumTemp = document.querySelector("#celcium-temp");
+let farenheitTemp = document.querySelector("#farenheit-temp");
+celciumTemp.addEventListener("click", changeToCelcium);
+farenheitTemp.addEventListener("click", changeToFarenheit);
+
+let celsiusTemperature = null;
+
 searchDefaultCity("Kyiv");

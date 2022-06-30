@@ -148,3 +148,11 @@ body {
 #farenheit-temp {
   text-decoration: none;
 }
+.today-temperature .active {
+  cursor: default;
+  color: #112d4e;
+}
+
+.today-temperature .active:hover {
+  text-decoration: none;
+}
