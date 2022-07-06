@@ -45,6 +45,38 @@ function searchDefaultCity(city) {
   axios.get(url).then(showWeather);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row future-weather">`;
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-12 col-md day day1">
+      <div class="card day-section">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8">
+              <div class="weekday">${day}</div>
+              <div class="cloudness">Sunny</div>
+              <div class="temperature-days5" id="weather-future-max">
+                18°C<span id="weather-future-min"> 12°C</span>
+              </div>
+            </div>
+            <div class="col-4 day5-image">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function changeCurrentCityAndWeather(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#search-city");
@@ -121,3 +153,4 @@ farenheitTemp.addEventListener("click", changeToFarenheit);
 let celsiusTemperature = null;
 
 searchDefaultCity("Kyiv");
+displayForecast();

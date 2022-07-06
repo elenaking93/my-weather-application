@@ -156,3 +156,6 @@ body {
 .today-temperature .active:hover {
   text-decoration: none;
 }
+#weather-future-min {
+  opacity: 0.7;
+}
