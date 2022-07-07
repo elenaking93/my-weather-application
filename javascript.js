@@ -46,33 +46,56 @@ function searchDefaultCity(city) {
   axios.get(url).then(showWeather);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row future-weather">`;
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-12 col-md day day1">
       <div class="card day-section">
         <div class="card-body">
           <div class="row">
             <div class="col-8">
-              <div class="weekday">${day}</div>
-              <div class="cloudness">Sunny</div>
+              <div class="weekday">${formatDay(forecastDay.dt)}</div>
+              <div class="cloudness">${forecastDay.weather[0].main}</div>
               <div class="temperature-days5" id="weather-future-max">
-                18°C<span id="weather-future-min"> 12°C</span>
+                ${Math.round(
+                  forecastDay.temp.max
+                )}°C<span id="weather-future-min"> ${Math.round(
+          forecastDay.temp.min
+        )}°C</span>
               </div>
             </div>
             <div class="col-4 day5-image">
-              <i class="fa-solid fa-sun"></i>
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt="" width="60" />
             </div>
           </div>
         </div>
       </div>
     </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div`;
