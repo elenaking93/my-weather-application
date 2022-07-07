@@ -65,7 +65,6 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row future-weather">`;
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
@@ -140,7 +139,6 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  console.log(response);
   let city = response.data.name;
   let searchCity = document.querySelector(".main-city");
   searchCity.innerHTML = city;
